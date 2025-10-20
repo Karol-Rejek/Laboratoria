@@ -80,12 +80,21 @@ void task4()
 
 void task5()
 {
-    std::string pesel;
+    std::string peselStr;
 
     printf("Podaj numer PESEL\n");
-    std::cin >> pesel;
+    std::cin >> peselStr;
 
+    IdNumber pesel(peselStr);
 
+    try
+    {
+        pesel.Validate();
+    }
+    catch (const std::invalid_argument& e)
+    {
+        printf("Błąd: %s\n", e.what());
+    }
 }
 
 int main() 
@@ -93,6 +102,7 @@ int main()
     //task1();
     //task2();
     //task3();
-    task4();
+    //task4();
+    task5();
     return 0;
 }
