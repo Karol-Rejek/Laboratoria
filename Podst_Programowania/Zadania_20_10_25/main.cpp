@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 
+#include "IDNumber/IdNumber.h"
+
 
 int findMax(std::vector<int> vec) 
 {
@@ -40,15 +42,57 @@ void task2()
     
 }
 
+int addFrom1ToNumber(int number)
+{
+    int sum = 0;
+    for (int i = 1; i <= number; i++)
+    {
+        sum += i;
+    }
+    return sum;
+}
+
 void task3()
 {
-    //to be implemented
+    int n;
+    std::cin >> n;
+    printf("Suma liczb od 1 do %i wynosi: %i\n", n, addFrom1ToNumber(n));
+}
+
+void task4()
+{
+    int correctNumber = rand() % 20 + 1;
+    int userNumber;
+
+    do
+    {
+        std::cin >> userNumber;
+        if(userNumber != correctNumber)
+        {
+            printf("Pudło\n");
+        }
+        else
+        {
+            printf("Gratulacje! Zgadles liczbe.\n");
+        }
+    } while (userNumber != correctNumber);
+}
+
+void task5()
+{
+    std::string pesel;
+
+    printf("Podaj numer PESEL\n");
+    std::cin >> pesel;
+
+
 }
 
 int main() 
 {
     //task1();
     //task2();
-    task3();
+    //task3();
+    task4();
     return 0;
 }
