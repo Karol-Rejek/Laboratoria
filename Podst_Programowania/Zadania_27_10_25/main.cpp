@@ -116,8 +116,9 @@ void task7()
 #pragma region Zadanie 8
 void task8()
 {
-    int a , b;
+    int a = 2, b = 4;
     int max = a > b ? a : b;
+    printf("Max: %i\n", max);
 }
 #pragma endregion
 
