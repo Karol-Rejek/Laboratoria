@@ -1,24 +1,24 @@
 #include <iostream>
 int a = 5, b = 5;
 
-void add()
+void add() //dla tej wersji nie zmienia się wartość zmiennych w main
 {
     printf("%d\n", a + b);
 }
 
-void add(int a, int b)
+void add(int a, int b) //dla tej wersji nie zmienia się wartość zmiennych w main
 {
     a = a + b;
     printf("%d\n", a);
 }
 
-void add_(int &a, int &b)
+void add_(int &a, int &b) //dla tej wersji zmienia się wartość zmiennych w main
 {
     a = a + b;
     printf("%d\n", a);
 }
 
-void add__(int* a, int* b)
+void add__(int* a, int* b) //dla tej wersji zmienia się wartość zmiennych w main
 {
     printf("%d\n", *a + *b);
 }
