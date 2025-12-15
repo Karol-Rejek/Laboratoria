@@ -1,0 +1,1 @@
+int pomnoz(int a, int b);

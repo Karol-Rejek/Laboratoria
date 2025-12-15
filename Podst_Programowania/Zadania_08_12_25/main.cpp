@@ -1,28 +1,19 @@
 #include <iostream>
+using namespace std;
 
-int func1(int a)
+void secret()
 {
-    return 1;
+    cout << "SECRET FUNCION, NOT CALLED FROM ANYWHERE!" << endl;
 }
 
-int func2(int a)
+void func()
 {
-    return 2;
-}
-
-int func3(int a)
-{
-    func2(a);
-    return 3;
+    cout << "NORMAL FUNCTION" << endl;
 }
 
 int main()
 {
-    int output = 5;
-
-    output = func1(66666);
-    output = func3(7);
-
-    std::cout << output;
+    func();
+    cout << "END OF MAIN" << endl;
     return 0;
 }

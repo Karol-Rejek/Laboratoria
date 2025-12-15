@@ -1,0 +1,1 @@
+int odejmij(int a, int b);
