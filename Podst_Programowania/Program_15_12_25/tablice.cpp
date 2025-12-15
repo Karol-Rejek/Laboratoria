@@ -1,5 +1,5 @@
 #include "tablice.h"
-# include <iostream>
+#include <iostream>
 
 
 int sumArray(int* arr, int size)
@@ -27,6 +27,7 @@ int minArray(int* arr, int size)
     {
         return 0;
     }
+    
     int min = arr[0];
     for (int i = 1; i < size; ++i)
     {
@@ -44,6 +45,7 @@ int maxArray(int* arr, int size)
     {
         return 0;
     }
+
     int max = arr[0];
     for (int i = 1; i < size; ++i)
     {
@@ -55,7 +57,7 @@ int maxArray(int* arr, int size)
     return max;
 }
 
-int tablice(int k)
+void tablice()
 {
     int size;
     std::printf("Podaj rozmiar tablicy: ");
@@ -63,7 +65,17 @@ int tablice(int k)
 
     int* tab = new int[size];
 
+    std::printf("Podaj %d elementow tablicy:\n", size);
+    for (int i = 0; i < size; ++i)
+    {
+        std::printf("Element %d: ", i);
+        std::cin >> tab[i];
+    }
+
+    std::printf("Wybierz operacje na tablicy:\n1. Suma\n2. Srednia\n3. Minimum\n4. Maximum\n");
     int choice;
+    std::cin >> choice;
+
     switch (choice)
     {
     case 1:
@@ -84,5 +96,4 @@ int tablice(int k)
     }
     
     delete[] tab;
-    return 0;
 }

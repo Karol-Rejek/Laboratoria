@@ -1,1 +1,1 @@
-int arytmatyka(int k);
+void arytmatyka();

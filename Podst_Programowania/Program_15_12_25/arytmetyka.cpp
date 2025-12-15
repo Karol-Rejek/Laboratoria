@@ -1,12 +1,12 @@
 #include "arytmetyka.h"
 
-# include <iostream>
-# include <vector>
+#include <iostream>
+#include <vector>
 
-# include "dodaj.h"
-# include "odejmij.h"
-# include "pomnoz.h"
-# include "podziel.h"
+#include "dodaj.h"
+#include "odejmij.h"
+#include "pomnoz.h"
+#include "podziel.h"
 
 std::vector<int> userInputs()
 {
@@ -15,7 +15,8 @@ std::vector<int> userInputs()
     std::cin >> a >> b;
     return {a, b};
 }
-int arytmatyka(int k)
+
+void arytmatyka()
 {
     std::vector<int> inputs;
     
@@ -50,5 +51,4 @@ int arytmatyka(int k)
                 std::printf("Niepoprawny wybor!\n");
         }   
     }
-    return 0;
 }
