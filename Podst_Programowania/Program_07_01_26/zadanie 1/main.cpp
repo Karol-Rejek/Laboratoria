@@ -15,6 +15,7 @@
 // 8. liczba n jest ujemna lub równa zero
 // 9. plik zawiera puste linie lub spacje
 
+#pragma region FileValidationFunctions
 std::string trim(const std::string& str)
 {
     auto start = std::find_if_not(str.begin(), str.end(), [](unsigned char c) { 
@@ -210,6 +211,7 @@ std::pair<bool, std::string> fileValidation(const std::string& filePath)
 
     return {true, ""};
 }
+#pragma endregion
 
 #pragma region UnitTests
 std::vector<std::string> getTestFiles() // funnkcja odpowiedzialna za wybór jakie testy bedą przepwadzone przez wybranie pliku.
@@ -287,6 +289,7 @@ void runUnitTests()
 }
 #pragma endregion
 
+#pragma region QuickSort
 std::vector<int> quickSort(std::vector<int>& arr, int low, int high)
 {
     if (low < high)
@@ -346,6 +349,7 @@ void taskOnFile(const std::string& filePath)
     }
     outFile.close();
 }
+#pragma endregion
 
 int main()
 {
