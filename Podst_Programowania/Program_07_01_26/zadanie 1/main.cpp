@@ -287,6 +287,66 @@ void runUnitTests()
 }
 #pragma endregion
 
+std::vector<int> quickSort(std::vector<int>& arr, int low, int high)
+{
+    if (low < high)
+    {
+        int pivot = arr[high];
+        int i = (low - 1);
+
+        for (int j = low; j <= high - 1; j++)
+        {
+            if (arr[j] < pivot)
+            {
+                i++;
+                std::swap(arr[i], arr[j]);
+            }
+        }
+        std::swap(arr[i + 1], arr[high]);
+        int pi = i + 1;
+
+        quickSort(arr, low, pi - 1);
+        quickSort(arr, pi + 1, high);
+    }
+    return arr;
+}
+
+void taskOnFile(const std::string& filePath)
+{
+    auto [isValid, errorMessage] = fileValidation(filePath);
+    if (!isValid)
+    {
+        std::cout << "File validation failed: " << errorMessage << std::endl;
+        return;
+    }
+
+    std::ifstream file(filePath);
+    auto [dataSuccess, data] = fileData(file);
+    if (!dataSuccess)
+    {
+        std::cout << "Error reading data from file." << std::endl;
+        return;
+    }
+
+    int n = data[0];
+    std::vector<int> numbers(data.begin() + 1, data.end());
+
+    std::vector<int> sortedNumbers = quickSort(numbers, 0, n - 1);
+    
+    std::ofstream outFile("sorted_" + filePath);
+    if (!outFile)
+    {
+        std::cout << "Error creating output file." << std::endl;
+        return;
+    }
+
+    for (const auto& num : sortedNumbers)
+    {
+        outFile << num << "\n";
+    }
+    outFile.close();
+}
+
 int main()
 {
     runUnitTests(); // Uruchomienie testów jednostkowych
@@ -294,6 +354,8 @@ int main()
     // Komantarz: Najlepszym zastosowaniem dla testów byłoby wywołanie każdej funkcji/pliku osobno 
     // w dostosowanym środowisku testowym (np. przy użyciu cMake), jednak ze względu
     // na ograniczenia projektu testy zostały zintegrowane w jedną funkcję runUnitTests().
+
+    taskOnFile("filegood.txt");
 
     return 0;
 }
