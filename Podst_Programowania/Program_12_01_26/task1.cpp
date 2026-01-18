@@ -69,15 +69,6 @@ int main()
             i--;
         }
     }
-
-    /*try
-    {
-        loadIntNumber();
-    }
-    catch(int e)
-    {
-        std::cerr << "Invalid input" << '\n';
-    }*/
     
 
     if(!blad)
