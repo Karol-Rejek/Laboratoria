@@ -14,7 +14,7 @@
 // 7. liczba n nie jest zgodna z ilością podanych liczb
 // 8. liczba n jest ujemna lub równa zero
 // 9. plik zawiera puste linie lub spacje
-
+//Test
 #pragma region FileValidationFunctions
 std::string trim(const std::string& str)
 {
